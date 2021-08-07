@@ -104,7 +104,7 @@ def create():
 @login_required
 def history():
     """Show history of workouts"""
-    rows=db.execute("SELECT name, time FROM history WHERE user_id=:user_id ORDER BY time DESC", user_id=session["user_id"])
+    rows=db.execute("SELECT name, time FROM history WHERE user_id=:user_id", user_id=session["user_id"])
 
     historys=[]
 

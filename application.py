@@ -37,7 +37,7 @@ db = SQL(os.getenv("DATABASE_URL"))
 @login_required
 def index():
     """Show workouts created"""
-    rows=db.execute("SELECT name, musclegroup, exercise1, reps1, exercise2, reps2, exercise3, reps3, exercise4, reps4, exercise5, reps5 FROM workouts WHERE user_id=:user_id GROUP BY name", user_id=session["user_id"])
+    rows=db.execute("SELECT name, musclegroup, exercise1, reps1, exercise2, reps2, exercise3, reps3, exercise4, reps4, exercise5, reps5 FROM workouts WHERE user_id=:user_id", user_id=session["user_id"])
 
     if not rows:
         return apology("U have no workouts, Use the create tab to create one", 200)

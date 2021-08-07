@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Do
+{% endblock %}
+
+{% block main %}
+
+    <form action="/do" method="post">
+        <div class="form-group">
+            <select class = "form-control" name="name">
+                <option disabled selected value ="">Select name</option>
+                {% for name in names%}
+                <option>{{name["name"]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Do</button>
+    </form>
+{% endblock %}

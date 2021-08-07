@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Holdings
+{% endblock %}
+
+{% block main %}
+        <table class= "table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for history in historys%}
+                <tr>
+                    <td>{{history["name"]}}</td>
+                    <td>{{history["time"]}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+{% endblock %}

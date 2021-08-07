@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Workouts
+{% endblock %}
+
+{% block main %}
+    <table class= "table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Muscle Group</th>
+                    <th>Exercise 1</th>
+                    <th>Exercise 2</th>
+                    <th>Exercise 3</th>
+                    <th>Exercise 4</th>
+                    <th>Exercise 5</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {%for workout in workouts%}
+                <tr>
+                    <td>{{workout["name"]}}</td>
+                    <td>{{workout["musclegroup"]}}</td>
+                        <td>{{workout["exercise1"]}}({{workout["reps1"]}} reps)</td>
+                    {% if workout["exercise2"] != a %}
+                        <td>{{workout["exercise2"]}}({{workout["reps2"]}} reps)</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                    {% if workout["exercise3"] != a %}
+                        <td>{{workout["exercise3"]}}({{workout["reps3"]}} reps)</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                    {% if workout["exercise4"] != a %}
+                        <td>{{workout["exercise4"]}}({{workout["reps4"]}} reps)</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                    {% if workout["exercise5"] != a %}
+                        <td>{{workout["exercise5"]}}({{workout["reps5"]}} reps)</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+        </table>
+{% endblock %}

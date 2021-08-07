@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Exercise
+{% endblock %}
+
+{% block main %}
+    {% for exercise in exercises%}
+        <h1  style="text-align:center">{{exercise["name"]}}</h1>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action list-group-item-info">Do {{exercise["reps1"]}} reps of {{exercise["exercise1"]}}</a>
+        {% if exercise["exercise2"] != a %}
+            <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Do {{exercise["reps2"]}} reps of {{exercise["exercise2"]}}</a>
+        {% endif %}
+        {% if exercise["reps3"] != a %}
+            <a href="#" class="list-group-item list-group-item-action list-group-item-info">Do {{exercise["reps3"]}} reps of {{exercise["exercise3"]}}</a>
+        {% endif %}
+        {% if exercise["reps4"] != a %}
+            <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Do {{exercise["reps4"]}} reps of {{exercise["exercise4"]}}</a>
+        {% endif %}
+        {% if exercise["reps5"] != a %}
+            <a href="#" class="list-group-item list-group-item-action list-group-item-info">Do {{exercise["reps5"]}} reps of {{exercise["exercise5"]}}</a>
+        {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create
+{% endblock %}
+
+{% block main %}
+
+    <form action="/create" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Name" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="musclegroup" placeholder="Muscle Group" type="text">
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="exercise1" placeholder="Exercise 1" type="text">
+            <input autocomplete="off" class="form-control" name="reps1" placeholder="Reps 1" min = 1 type="number">
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="exercise2" placeholder="Exercise 2" type="text">
+            <input autocomplete="off" class="form-control" name="reps2" placeholder="Reps 2" min = 1 type="number">
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="exercise3" placeholder="Exercise 3" type="text">
+            <input autocomplete="off" class="form-control" name="reps3" placeholder="Reps 3" min = 1 type="number">
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="exercise4" placeholder="Exercise 4" type="text">
+            <input autocomplete="off" class="form-control" name="reps4" placeholder="Reps 4" min = 1 type="number">
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="exercise5" placeholder="Exercise 5" type="text">
+            <input autocomplete="off" class="form-control" name="reps5" placeholder="Reps 5" min = 1 type="number">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Create</button>
+    </form>
+{% endblock %}
